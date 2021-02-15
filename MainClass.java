@@ -4,19 +4,68 @@ import java.util.ArrayList;
 import java.util.Scanner;
 
 public class MainClass {
+	public static final int  showContact 	     = 1;
+	public static final int  addNewContact       = 2;
+	public static final int  editExistingContact = 3;
+	public static final int  deletePersonContact = 4;
+	public static final int  exit  				 = 5;
 	
 	public static void main(String[] args) {
 		
 		AddressBook dMart = new AddressBook();
+		
 		System.out.println("-----------------------------------------------------------Welcome to Address Book Manangement System--------------------------------------------------------\n");
 		dMart.display();
-		dMart.showContact();
-		dMart.addNewContact();
-		dMart.editExistingContact();
-		dMart.deleteContact();
-	}
+		boolean flag = true;
+		Scanner temp = new Scanner(System.in);
 
+		while(flag) 
+		{
+			System.out.println("1 : Showing Contact");
+			System.out.println("2 : Adding New Contact");
+			System.out.println("3 : Edit Existing Contact");
+			System.out.println("4 : Delete Person Contact");
+			System.out.println("5 : Exit");
+			
+			System.out.print("Enter a choice : ");
+			int choice = temp.nextInt();
+			System.out.println("------------------------------------------------------------------------------------------------------------------------------------------------------------");					
+				
+			switch(choice)
+			{
+				case showContact:
+				{
+					dMart.showContact();
+					System.out.println("------------------------------------------------------------------------------------------------------------------------------------------------------------");					
+					break;
+				}
+				case addNewContact :{
+					dMart.addNewContact();
+					System.out.println("------------------------------------------------------------------------------------------------------------------------------------------------------------");					
+					break;
+				}
+				case editExistingContact:{
+					dMart.editExistingContact();
+					System.out.println("------------------------------------------------------------------------------------------------------------------------------------------------------------");					
+					break;
+				}
+				case deletePersonContact:{
+					dMart.deleteContact();
+					System.out.println("------------------------------------------------------------------------------------------------------------------------------------------------------------");					
+					break;
+				}
+				case exit:{
+					System.out.println("-------------------------------------------Thank you for using address book management system.--------------------------------------------------------------");
+					System.out.println("------------------------------------------------------------------------------------------------------------------------------------------------------------");					
+					flag = false;
+					break;
+				}
+			}
+		}
+	}
 }
+
+
 
 class AddressBook{
 	
@@ -163,5 +212,4 @@ class AddressBook{
 			System.out.println("You have successfully deleted contact.");
 		}
 	}
-	
 }	
