@@ -12,6 +12,7 @@ public class MainClass {
 		dMart.display();
 		dMart.showContact();
 		dMart.addNewContact();
+		dMart.editExistingContact();
 	}
 
 }
@@ -94,4 +95,44 @@ class AddressBook{
 		
 		System.out.println("You have successfully added new contact.");
 	}
-}
+	public void editExistingContact() {
+		int counter=0;
+		System.out.print("Enter person name do you want to edit : ");
+		String editName = sc.nextLine();
+		for(int i = 0; i < listOfFirstName.size(); i++) {
+			if(listOfFirstName.get(i).equals(editName)) 
+					break;	
+			else
+				counter++;
+		}
+		if(counter==listOfFirstName.size())
+				System.out.println("Invalid Name");
+		else {
+			System.out.print("First Name : ");
+			listOfFirstName.set(counter,sc.nextLine());
+			
+			System.out.print("Last Name : ");
+			listOfLastName.set(counter,sc.nextLine());
+			
+			System.out.print("Address Name : ");
+			listOfAddress.set(counter,sc.nextLine());
+			
+			System.out.print("City Name : ");
+			listOfCity.set(counter,sc.nextLine());
+			
+			System.out.print("State Name : ");
+			listOfState.set(counter,sc.nextLine());
+			
+			System.out.print("Zip Name : ");
+			listOfZip.set(counter,sc.nextLine());
+			
+			System.out.print("Phone Number : ");
+			listOfPhoneNumber.set(counter,sc.nextLine());
+
+			System.out.print("E-mail id : ");
+			listOfEmail.set(counter,sc.nextLine());
+			
+			System.out.println("You have successfully edited contact.");
+		}	
+	}
+}	
