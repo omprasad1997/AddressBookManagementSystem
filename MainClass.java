@@ -13,6 +13,7 @@ public class MainClass {
 		dMart.showContact();
 		dMart.addNewContact();
 		dMart.editExistingContact();
+		dMart.deleteContact();
 	}
 
 }
@@ -135,4 +136,32 @@ class AddressBook{
 			System.out.println("You have successfully edited contact.");
 		}	
 	}
+	public void deleteContact()
+	{
+		int count = 0;
+		System.out.print("Enter person name do you want to delete : ");
+		String name = sc.nextLine();
+		for(int i = 0; i < listOfFirstName.size(); i++) {
+				if(listOfFirstName.get(i).equals(name))
+					break;
+				else
+					count++;
+			}
+		
+		if(count==listOfFirstName.size()) {
+				System.out.println("Invalid Name");	
+		}
+		else {
+			listOfFirstName.remove(count);
+			listOfLastName.remove(count);
+			listOfAddress.remove(count);
+			listOfCity.remove(count);
+			listOfState.remove(count);
+			listOfZip.remove(count);
+			listOfPhoneNumber.remove(count);
+			listOfEmail.remove(count);
+			System.out.println("You have successfully deleted contact.");
+		}
+	}
+	
 }	
