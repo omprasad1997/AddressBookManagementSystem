@@ -1,6 +1,7 @@
 package com.blbz;
 
 import java.util.ArrayList;
+import java.util.Scanner;
 
 public class MainClass {
 	
@@ -10,11 +11,14 @@ public class MainClass {
 		System.out.println("-----------------------------------------------------------Welcome to Address Book Manangement System--------------------------------------------------------\n");
 		dMart.display();
 		dMart.showContact();
+		dMart.addNewContact();
 	}
 
 }
 
 class AddressBook{
+	
+	Scanner sc = new Scanner(System.in);
 	
 	public String firstName ;
 	public String lastName;
@@ -52,5 +56,42 @@ class AddressBook{
 		for(int i = 0; i < listOfFirstName.size();i++)
 			System.out.printf("%-20s%-20s%-20s%-20s%-20s%-20s%-20s%-20s%n",listOfFirstName.get(i),listOfLastName.get(i),
 							listOfAddress.get(i),listOfCity.get(i),listOfState.get(i),listOfZip.get(i),listOfPhoneNumber.get(i),listOfEmail.get(i));
+	}
+	
+	public void addNewContact()
+	{
+		System.out.print("First Name : ");
+		firstName = sc.nextLine();
+		listOfFirstName.add(firstName);
+		
+		System.out.print("Last Name : ");
+		lastName = sc.nextLine();
+		listOfLastName.add(lastName);
+		
+		System.out.print("Address : ");
+		address = sc.nextLine();
+		listOfAddress.add(address);
+		
+		System.out.print("City Name : ");
+		city = sc.nextLine();
+		listOfCity.add(city);
+		
+		System.out.print("State Name : ");
+		state = sc.nextLine();
+		listOfState.add(state);
+		
+		System.out.print("Zip code : ");
+		zip = sc.nextLine();
+		listOfZip.add(zip);
+		
+		System.out.print("Phone Number: ");
+		phoneNumber = sc.nextLine();
+		listOfPhoneNumber.add(phoneNumber);
+		
+		System.out.print("E-mail id : ");
+		email = sc.nextLine();
+		listOfEmail.add(email);
+		
+		System.out.println("You have successfully added new contact.");
 	}
 }
