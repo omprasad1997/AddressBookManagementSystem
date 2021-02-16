@@ -12,7 +12,7 @@ public class MainClass {
 	
 	public static void main(String[] args) {
 		
-		AddressBook dMart = new AddressBook();
+		Contact dMart = new Contact("Pushpak","Ghatode","Kailash Nagar","Pune","Maharashtra","400001","384792876","abc@gmail.com");
 		
 		System.out.println("-----------------------------------------------------------Welcome to Address Book Manangement System--------------------------------------------------------\n");
 		dMart.display();
@@ -67,7 +67,7 @@ public class MainClass {
 
 
 
-class AddressBook{
+class Contact{
 	
 	Scanner sc = new Scanner(System.in);
 	
@@ -80,6 +80,17 @@ class AddressBook{
 	public String phoneNumber;
 	public String email;
 	
+	public Contact(String firstName,String lastName,String address,String city,String state,String zip,String phoneNumber,String email) {
+		this.firstName   = firstName;
+		this.lastName    = lastName;
+		this.address     = address;
+		this.city        = city;
+		this.state       = state;
+		this.zip         = zip;
+		this.phoneNumber = phoneNumber; 
+		this.email       = email;
+	}
+	
 	ArrayList<String> listOfFirstName   = new ArrayList<String>();
 	ArrayList<String> listOfLastName    = new ArrayList<String>();
 	ArrayList<String> listOfAddress     = new ArrayList<String>();
@@ -91,14 +102,14 @@ class AddressBook{
 	
 	public void display()
 	{
-		listOfFirstName.add("Pushpak"); listOfFirstName.add("Balaji");listOfFirstName.add("Pranav");
-		listOfLastName.add("Ghatode");  listOfLastName.add("Rathod");listOfLastName.add("Bobade");
-		listOfAddress.add("Kailash Nagar"); listOfAddress.add("Shivaji Nagar");listOfAddress.add("Ashok Nagar");
-		listOfCity.add("Pune"); listOfCity.add("Nashik");listOfCity.add("Nanded");
-		listOfState.add("Maharashtra"); listOfState.add("Maharashtra");listOfState.add("Maharashtra");
-		listOfZip.add("400001"); listOfZip.add("400002");listOfZip.add("400003");
-		listOfPhoneNumber.add("384792876"); listOfPhoneNumber.add("192844564");listOfPhoneNumber.add("192456564");
-		listOfEmail.add("abc@gmail.com"); listOfEmail.add("xyz@gmail.com");listOfEmail.add("pqr@gmail.com");
+		listOfFirstName.add(firstName); 
+		listOfLastName.add(lastName);  
+		listOfAddress.add(address); 
+		listOfCity.add(city); 
+		listOfState.add(state); 
+		listOfZip.add(zip); 
+		listOfPhoneNumber.add(phoneNumber);
+		listOfEmail.add(email); 
 	}
 	
 	public void showContact()
